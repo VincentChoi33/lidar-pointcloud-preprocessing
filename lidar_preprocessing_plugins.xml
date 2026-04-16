@@ -1,0 +1,119 @@
+<library path="lib/liblidar_preprocessing_pipeline_plugins">
+    <class
+        name="deskew"
+        type="lidar_preprocessing_plugins::OusterPointCloudDeskewPlugin"
+        base_class_type="lidar_preprocessing_plugins::OusterPreprocessingPlugins">
+        <description>
+            Deskew preprocessor for Ouster pointclouds.
+        </description>
+    </class>
+
+    <class
+        name="gravity_align"
+        type="lidar_preprocessing_plugins::OusterGravityAlignPlugin"
+        base_class_type="lidar_preprocessing_plugins::OusterPreprocessingPlugins">
+        <description>
+            Gravity alignment for Ouster pointclouds.
+        </description>
+    </class>
+
+    <class
+        name="deskew"
+        type="lidar_preprocessing_plugins::VelodynePointCloudDeskewPlugin"
+        base_class_type="lidar_preprocessing_plugins::VelodynePreprocessingPlugins">
+        <description>
+            Deskew preprocessor for Velodyne pointclouds.
+        </description>
+    </class>
+
+    <class
+        name="gravity_align"
+        type="lidar_preprocessing_plugins::VelodyneGravityAlignPlugin"
+        base_class_type="lidar_preprocessing_plugins::VelodynePreprocessingPlugins">
+        <description>
+            Gravity alignment for Velodyne pointclouds.
+        </description>
+    </class>
+
+    <class
+        name="deskew"
+        type="lidar_preprocessing_plugins::LivoxPointCloudDeskewPlugin"
+        base_class_type="lidar_preprocessing_plugins::LivoxPreprocessingPlugins">
+        <description>
+            Deskew preprocessor for Livox pointclouds.
+        </description>
+    </class>
+
+    <class
+        name="gravity_align"
+        type="lidar_preprocessing_plugins::LivoxGravityAlignPlugin"
+        base_class_type="lidar_preprocessing_plugins::LivoxPreprocessingPlugins">
+        <description>
+            Gravity alignment for Livox pointclouds.
+        </description>
+    </class>
+
+    <class
+        name="voxel_grid"
+        type="lidar_preprocessing_plugins::OusterVoxelGridFilterPlugin"
+        base_class_type="lidar_preprocessing_plugins::OusterPreprocessingPlugins">
+        <description>
+            Voxel grid preprocessor for Ouster pointclouds.
+        </description>
+    </class>
+
+    <class
+        name="voxel_grid"
+        type="lidar_preprocessing_plugins::VelodyneVoxelGridFilterPlugin"
+        base_class_type="lidar_preprocessing_plugins::VelodynePreprocessingPlugins">
+        <description>
+            Voxel grid preprocessor for Velodyne pointclouds.
+        </description>
+    </class>
+
+    <class
+        name="voxel_grid"
+        type="lidar_preprocessing_plugins::LivoxVoxelGridFilterPlugin"
+        base_class_type="lidar_preprocessing_plugins::LivoxPreprocessingPlugins">
+        <description>
+            Voxel grid preprocessor for Livox pointclouds.
+        </description>
+    </class>
+
+    <class
+        name="ror"
+        type="lidar_preprocessing_plugins::OusterRadiusOutlierRemovalPlugin"
+        base_class_type="lidar_preprocessing_plugins::OusterPreprocessingPlugins">
+        <description>
+            Radius outlier removal for Ouster pointclouds.
+        </description>
+    </class>
+
+    <class
+        name="ror"
+        type="lidar_preprocessing_plugins::VelodyneRadiusOutlierRemovalPlugin"
+        base_class_type="lidar_preprocessing_plugins::VelodynePreprocessingPlugins">
+        <description>
+            Radius outlier removal for Velodyne pointclouds.
+        </description>
+    </class>
+
+    <class
+        name="ror"
+        type="lidar_preprocessing_plugins::LivoxRadiusOutlierRemovalPlugin"
+        base_class_type="lidar_preprocessing_plugins::LivoxPreprocessingPlugins">
+        <description>
+            Radius outlier removal for Livox pointclouds.
+        </description>
+    </class>
+
+    <class
+        name="livox_tag_filter"
+        type="lidar_preprocessing_plugins::LivoxTagFilterPluginType"
+        base_class_type="lidar_preprocessing_plugins::LivoxPreprocessingPlugins">
+        <description>
+            Livox tag filtering for Livox pointclouds.
+        </description>
+    </class>
+
+</library>

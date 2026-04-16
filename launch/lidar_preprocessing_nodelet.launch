@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="namespace" default="robot" />
+    <arg name="perception_nodelet_name" default="lidar_preprocessing_manager" />
+    <arg name="standalone" default="true" />
+    <arg name="params_file"
+        default="$(find lidar_preprocessing_pipeline)/config/lidar_preprocessing_params.yaml" />
+    <arg name="sensor" default="Ouster" /> <!-- Options: Ouster, Velodyne, Livox -->
+    <arg name="node_name" default="lidar_preprocessing_nodelet" />
+
+    <group if="$(arg standalone)">
+        <node pkg="nodelet"
+            type="nodelet"
+            name="$(arg perception_nodelet_name)"
+            args="manager"
+            output="screen"
+            ns="$(arg namespace)"
+            clear_params="true" />
+    </group>
+
+    <group if="$(eval arg('sensor') == 'Ouster')">
+        <node pkg="nodelet"
+            type="nodelet"
+            name="$(arg node_name)"
+            ns="$(arg namespace)"
+            args="load lidar_preprocessing_pipeline/OusterLidarPreProcessingNodelet $(arg perception_nodelet_name)"
+            output="screen"
+            clear_params="true">
+            <rosparam file="$(arg params_file)" command="load" />
+        </node>
+    </group>
+
+    <group if="$(eval arg('sensor') == 'Velodyne')">
+        <node pkg="nodelet"
+            type="nodelet"
+            name="$(arg node_name)"
+            ns="$(arg namespace)"
+            args="load lidar_preprocessing_pipeline/VelodyneLidarPreProcessingNodelet $(arg perception_nodelet_name)"
+            output="screen"
+            clear_params="true">
+            <rosparam file="$(arg params_file)" command="load" />
+        </node>
+    </group>
+
+    <group if="$(eval arg('sensor') == 'Livox')">
+        <node pkg="nodelet"
+            type="nodelet"
+            name="$(arg node_name)"
+            ns="$(arg namespace)"
+            args="load lidar_preprocessing_pipeline/LivoxLidarPreProcessingNodelet $(arg perception_nodelet_name)"
+            output="screen"
+            clear_params="true">
+            <rosparam file="$(arg params_file)" command="load" />
+        </node>
+    </group>
+</launch>

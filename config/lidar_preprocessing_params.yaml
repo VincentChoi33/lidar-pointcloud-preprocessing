@@ -1,0 +1,54 @@
+core:
+  input_topic: "livox_front/points"
+
+imu_params:
+  topic: "livox_front/imu"
+  buffer_size: 4.0  # Seconds of IMU data to buffer for deskewing / calibration
+
+  calibration:
+    enabled: true
+    time: 3  # Initial stationary calibration window in seconds
+
+    external_velocity:
+      max_speed_mps: 0.05
+      max_age_sec: 0.5
+
+    gyro:
+      bias: [0.0, 0.0, 0.0]
+    accel:
+      bias: [0.0, 0.0, 0.0]
+      sm: [1., 0., 0.,
+           0., 1., 0.,
+           0., 0., 1.]
+
+  integration:
+    integration_params:
+      approximate_gravity: true
+      gravity_mps2: 9.80665
+
+pointcloud_deskew:
+  enabled: true
+  lidar_to_imu_translation: [0.0, 0.0, 0.0]
+  lidar_to_imu_rotation: [1.0, 0.0, 0.0,
+                          0.0, 1.0, 0.0,
+                          0.0, 0.0, 1.0]
+
+gravity_align:
+  enabled: true
+
+voxel_grid_filter:
+  enabled: false
+  leaf_size: 0.1
+
+radius_outlier_removal:
+  enabled: false
+  radius: 0.5
+  min_neighbors: 5
+
+livox_tag_filter:
+  enabled: true
+  remove_high_confidence_noise: true
+  remove_moderate_confidence_noise: true
+  remove_low_confidence_noise: false
+  remove_intensity_noise: true
+  output_per_return: false

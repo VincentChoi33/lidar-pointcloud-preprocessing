@@ -1,0 +1,100 @@
+#  Generated from CLion C/C++ Code Style settings
+BasedOnStyle: LLVM
+AccessModifierOffset: -4
+AlignAfterOpenBracket: Align
+# noinspection YAMLSchemaValidation
+AlignConsecutiveAssignments: false
+AlignOperands: true
+AllowAllArgumentsOnNextLine: false
+AllowAllConstructorInitializersOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakAfterReturnType: None
+AlwaysBreakTemplateDeclarations: Yes
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterCaseLabel: true
+  AfterClass: true
+  AfterControlStatement: true
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterUnion: true
+  BeforeCatch: true
+  BeforeElse: true
+  IndentBraces: false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+BreakBeforeBinaryOperators: None
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: BeforeColon
+BreakInheritanceList: BeforeColon
+ColumnLimit: 120
+CompactNamespaces: false
+ContinuationIndentWidth: 8
+IndentCaseLabels: true
+IndentPPDirectives: None
+IndentWidth: 4
+KeepEmptyLinesAtTheStartOfBlocks: true
+MaxEmptyLinesToKeep: 2
+NamespaceIndentation: None
+ObjCSpaceAfterProperty: false
+ObjCSpaceBeforeProtocolList: true
+PointerAlignment: Right
+ReflowComments: true
+SpaceAfterCStyleCast: true
+SpaceAfterLogicalNot: false
+SpaceAfterTemplateKeyword: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: false
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 2
+SpacesInAngles: false
+SpacesInCStyleCastParentheses: false
+SpacesInContainerLiterals: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+TabWidth: 4
+UseTab: Never
+IncludeBlocks: Regroup
+IncludeCategories:
+  # C System libs
+  - Regex: "<(stdio).h>"
+    Priority: 1
+  # C++ System libs
+  - Regex: '<([A-Za-z0-9\/-_])+>'
+    Priority: 2
+    # Our C libs
+  - Regex: '<(arrc_|ugv_)([A-Za-z0-9\/-_])+\.h>'
+    Priority: 3
+    SortPriority: 5
+    # Our C++ libs
+  - Regex: '<(arrc_|ugv_)([A-Za-z0-9\/-_])+\.hpp>'
+    Priority: 4
+    SortPriority: 6
+    # Third-party C libs
+  - Regex: '<([A-Za-z0-9\Q/-_\E])+.h>'
+    Priority: 5
+    SortPriority: 3
+    # Third-party C++ libs
+  - Regex: '<([A-Za-z0-9\Q/-_\E])+.hpp>'
+    Priority: 6
+    SortPriority: 4
+    # Pkg's C libs
+  - Regex: '.*\.h"'
+    Priority: 7
+    SortPriority: 7
+    # Pkg's C++ libs
+  - Regex: '.*\.hpp"'
+    Priority: 8
+    SortPriority: 8  

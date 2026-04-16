@@ -1,0 +1,28 @@
+<library path="lib/liblidar_preprocessing_pipeline">
+    <class
+        name="lidar_preprocessing_pipeline/OusterLidarPreProcessingNodelet"
+        type="lidar_preprocessing_nodelet::OusterLidarPreProcessingNodelet"
+        base_class_type="nodelet::Nodelet">
+        <description>
+            Pre-processing nodelet for Ouster pointclouds.
+        </description>
+    </class>
+
+    <class
+        name="lidar_preprocessing_pipeline/VelodyneLidarPreProcessingNodelet"
+        type="lidar_preprocessing_nodelet::VelodyneLidarPreProcessingNodelet"
+        base_class_type="nodelet::Nodelet">
+        <description>
+            Pre-processing nodelet for Velodyne pointclouds (PointXYZIRT).
+        </description>
+    </class>
+
+    <class
+        name="lidar_preprocessing_pipeline/LivoxLidarPreProcessingNodelet"
+        type="lidar_preprocessing_nodelet::LivoxLidarPreProcessingNodelet"
+        base_class_type="nodelet::Nodelet">
+        <description>
+            Pre-processing nodelet for Livox pointclouds (PointXYZRTLT).
+        </description>
+    </class>
+</library>
